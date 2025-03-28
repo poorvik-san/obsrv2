@@ -78,7 +78,7 @@ import lombok.Data;
 
 import org.hibernate.annotations.DynamicUpdate;
 //import org.hibernate.annotations.Type;
-import java.util.UUID;
+//import java.util.UUID;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -89,13 +89,13 @@ import java.util.List;
 public class Dataset {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    //@GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     // @Version
     // private Long version;
-    @Version
-    @Column(name = "version")
-    private Long version;
+    // @Version
+    // @Column(name = "version")
+    // private Long version;
 
 
     @Column(name = "dataset_id", nullable = false)
@@ -139,7 +139,7 @@ public class Dataset {
     @Column(name = "data_version")
     private Integer dataVersion;
 
-    @Column(name = "created_by", nullable = false, updatable = false)
+    @Column(name = "created_by", nullable = true, updatable = true)
     private String createdBy;
 
     @Column(name = "updated_by")
