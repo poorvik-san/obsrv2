@@ -78,7 +78,7 @@ import lombok.Data;
 
 import org.hibernate.annotations.DynamicUpdate;
 //import org.hibernate.annotations.Type;
-
+import java.util.UUID;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -93,6 +93,10 @@ public class Dataset {
     private String id;
     // @Version
     // private Long version;
+    @Version
+    @Column(name = "version")
+    private Long version;
+
 
     @Column(name = "dataset_id", nullable = false)
     private String datasetId;

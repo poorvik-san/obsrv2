@@ -14,11 +14,13 @@ public class DatasetController {
 
     public DatasetController(DatasetService datasetService) {
         this.datasetService = datasetService;
+        System.out.println((this.datasetService.toString()));
     }
 
     @PostMapping
     public ResponseEntity<Dataset> createDataset(@RequestBody Dataset dataset) {
         Dataset savedDataset = datasetService.createDataset(dataset);
+        System.out.println(savedDataset.toString());
         return ResponseEntity.ok(savedDataset);
     }
 }
